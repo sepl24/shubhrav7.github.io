@@ -495,7 +495,6 @@ async function loadReviews() {
     const data = await res.json();
 
     alert("STATUS: " + res.status);
-    alert(JSON.stringify(data));
 
     renderReviews(data);
 
@@ -554,7 +553,7 @@ async function loadReviews() {
           date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
         })
       });
-
+    }
       if (res.ok) {
         document.getElementById('r-name').value = '';
         document.getElementById('r-role').value = '';
