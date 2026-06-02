@@ -463,7 +463,6 @@ async function loadReviews() {
     const data = await res.json();
 
     alert("STATUS: " + res.status);
-    alert(JSON.stringify(data));
 
     renderReviews(data);
 
@@ -566,12 +565,7 @@ async function loadReviews() {
         msg.style.color = 'green';
         msg.textContent = 'Review submit ho gaya! Shukriya 🌸';
         loadReviews();
-      } else {
-  const err = await res.text();
-  console.log(err);
-  alert(err);
-      }
-    } catch(e) {
+      } catch(e) {
       msg.style.display = 'block';
       msg.style.color = 'red';
       msg.textContent = 'Network error — dobara try karo!';
