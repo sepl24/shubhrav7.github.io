@@ -6,82 +6,6 @@
 <title>Shubhra Verma — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* VISITOR COUNTER */
-.visitor-bar { background: var(--ink); color: white; text-align: center; padding: 0.8rem; font-size: 0.85rem; }
-.visitor-bar span { color: var(--peach); font-weight: 700; }
-
-/* TIMELINE */
-#timeline { padding: 6rem 3rem; background: var(--ink); }
-#timeline .section-label { color: var(--mint); }
-#timeline .section-title { color: white; }
-.tl { position: relative; max-width: 700px; margin: 3rem auto 0; }
-.tl::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--coral), var(--purple), var(--teal)); box-shadow: 0 0 12px var(--purple); }
-.tl-item { display: flex; justify-content: flex-end; padding-right: calc(50% + 2.5rem); margin-bottom: 3rem; position: relative; }
-.tl-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: calc(50% + 2.5rem); }
-.tl-dot { position: absolute; left: 50%; transform: translateX(-50%); width: 48px; height: 48px; border-radius: 50%; background: var(--ink); border: 2px solid var(--coral); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; box-shadow: 0 0 16px var(--coral), 0 0 32px rgba(255,107,107,0.3); z-index: 2; transition: box-shadow 0.3s; }
-.tl-item:nth-child(even) .tl-dot { border-color: var(--purple); box-shadow: 0 0 16px var(--purple), 0 0 32px rgba(124,92,191,0.3); }
-.tl-item:nth-child(3n) .tl-dot { border-color: var(--teal); box-shadow: 0 0 16px var(--teal), 0 0 32px rgba(42,191,191,0.3); }
-.tl-dot:hover { box-shadow: 0 0 24px var(--coral), 0 0 50px rgba(255,107,107,0.5); transform: translateX(-50%) scale(1.15); }
-.tl-body { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 1.4rem 1.8rem; max-width: 260px; transition: transform 0.3s, box-shadow 0.3s, background 0.3s; }
-.tl-body:hover { transform: translateY(-4px); background: rgba(255,255,255,0.09); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
-.tl-year { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); margin-bottom: 0.4rem; }
-.tl-item:nth-child(even) .tl-year { color: var(--lavender); }
-.tl-item:nth-child(3n) .tl-year { color: var(--mint); }
-.tl-title { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: white; margin-bottom: 0.4rem; }
-.tl-desc { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
-@media (max-width: 768px) {
-  .tl::before { left: 20px; }
-  .tl-item, .tl-item:nth-child(even) { justify-content: flex-start; padding-left: 4rem; padding-right: 0; }
-  .tl-dot { left: 20px; }
-}
-#reviews { padding: 6rem 3rem; background: var(--warm); }
-.reviews-form {
-  background: white; border-radius: 24px;
-  padding: 2rem; margin-bottom: 2.5rem;
-  border: 1px solid rgba(0,0,0,0.06);
-  max-width: 600px;
-}
-.reviews-form input,
-.reviews-form textarea {
-  width: 100%; padding: 0.8rem 1rem;
-  border: 1.5px solid rgba(0,0,0,0.1);
-  border-radius: 12px; font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem; margin-bottom: 0.8rem;
-  outline: none; transition: border 0.2s;
-  background: var(--warm);
-}
-.reviews-form input:focus,
-.reviews-form textarea:focus { border-color: var(--coral); }
-.star-row { display: flex; gap: 8px; margin-bottom: 1rem; cursor: pointer; }
-.star-row span { font-size: 1.8rem; transition: transform 0.2s; }
-.star-row span:hover { transform: scale(1.2); }
-.submit-btn {
-  background: var(--ink); color: white;
-  border: none; padding: 0.8rem 2rem;
-  border-radius: 50px; font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem; font-weight: 500;
-  cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
-}
-.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.2rem;
-}
-.review-card {
-  background: white; border-radius: 20px;
-  padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.review-card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
-.review-stars { color: #F0B429; font-size: 1rem; margin-bottom: 0.6rem; }
-.review-text { font-size: 0.88rem; color: #555; line-height: 1.7; font-style: italic; margin-bottom: 1rem; }
-.review-name { font-weight: 700; font-size: 0.88rem; }
-.review-role { font-size: 0.75rem; color: #aaa; }
-.review-date { font-size: 0.72rem; color: #ccc; margin-top: 0.3rem; }
-.msg-box { font-size: 0.85rem; margin-top: 0.5rem; display: none; }
-.no-reviews { color: #aaa; font-size: 0.9rem; }
-<style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --peach: #FFD6C0; --mint: #C2F0DC; --lavender: #DDD6FF;
@@ -90,16 +14,26 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; background: var(--warm); color: var(--ink); overflow-x: hidden; }
+
+  /* CURSOR */
   .cursor { width: 14px; height: 14px; background: var(--coral); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; transition: transform 0.15s ease, background 0.3s; mix-blend-mode: multiply; }
+
+  /* VISITOR BAR */
+  .visitor-bar { background: var(--ink); color: white; text-align: center; padding: 0.6rem; font-size: 0.82rem; }
+  .visitor-bar span { color: var(--peach); font-weight: 700; }
+
+  /* NAV */
   nav { position: fixed; top: 0; width: 100%; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: rgba(249,244,239,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.06); }
-  .logo { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 900; background: linear-gradient(135deg, var(--coral), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.5px; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 900; background: linear-gradient(135deg, var(--coral), var(--purple)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.5px; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
   .nav-links a { text-decoration: none; color: var(--ink); font-size: 0.9rem; font-weight: 500; position: relative; transition: color 0.2s; }
   .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 2px; background: var(--coral); transition: width 0.3s; }
   .nav-links a:hover::after { width: 100%; }
+
+  /* HERO */
   #hero { min-height: 100vh; display: flex; align-items: center; padding: 7rem 3rem 4rem; position: relative; overflow: hidden; }
   .blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.5; animation: float 8s ease-in-out infinite; }
-  .blob-1 { width: 400px; height: 400px; background: var(--peach); top: -100px; right: -80px; animation-delay: 0s; }
+  .blob-1 { width: 400px; height: 400px; background: var(--peach); top: -100px; right: -80px; }
   .blob-2 { width: 300px; height: 300px; background: var(--mint); bottom: 50px; left: -60px; animation-delay: 2s; }
   .blob-3 { width: 250px; height: 250px; background: var(--lavender); top: 50%; right: 20%; animation-delay: 4s; }
   @keyframes float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-30px) scale(1.05); } }
@@ -116,9 +50,13 @@
   .btn-secondary { background: white; color: var(--ink); border: 1.5px solid rgba(0,0,0,0.15); }
   @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-  #skills { padding: 6rem 3rem; background: white; }
+
+  /* SECTION BASE */
   .section-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--teal); margin-bottom: 0.8rem; }
   .section-title { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -1px; margin-bottom: 3rem; }
+
+  /* SKILLS */
+  #skills { padding: 6rem 3rem; background: white; }
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
   .skill-card { padding: 1.5rem; border-radius: 18px; display: flex; align-items: center; gap: 1rem; transition: transform 0.25s, box-shadow 0.25s; cursor: default; }
   .skill-card:hover { transform: translateY(-5px) rotate(-1deg); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
@@ -130,6 +68,28 @@
   .skill-card:nth-child(6n+6) { background: #FFD6F5; }
   .skill-icon { font-size: 1.8rem; }
   .skill-name { font-weight: 500; font-size: 0.95rem; }
+
+  /* TIMELINE */
+  #timeline { padding: 6rem 3rem; background: var(--ink); }
+  #timeline .section-label { color: var(--mint); }
+  #timeline .section-title { color: white; }
+  .tl { position: relative; max-width: 700px; margin: 3rem auto 0; }
+  .tl::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--coral), var(--purple), var(--teal)); box-shadow: 0 0 12px var(--purple); }
+  .tl-item { display: flex; justify-content: flex-end; padding-right: calc(50% + 2.5rem); margin-bottom: 3rem; position: relative; }
+  .tl-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: calc(50% + 2.5rem); }
+  .tl-dot { position: absolute; left: 50%; transform: translateX(-50%); width: 48px; height: 48px; border-radius: 50%; background: var(--ink); border: 2px solid var(--coral); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; box-shadow: 0 0 16px var(--coral), 0 0 32px rgba(255,107,107,0.3); z-index: 2; transition: box-shadow 0.3s; }
+  .tl-item:nth-child(even) .tl-dot { border-color: var(--purple); box-shadow: 0 0 16px var(--purple), 0 0 32px rgba(124,92,191,0.3); }
+  .tl-item:nth-child(3n) .tl-dot { border-color: var(--teal); box-shadow: 0 0 16px var(--teal), 0 0 32px rgba(42,191,191,0.3); }
+  .tl-dot:hover { box-shadow: 0 0 24px var(--coral), 0 0 50px rgba(255,107,107,0.5); transform: translateX(-50%) scale(1.15); }
+  .tl-body { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 1.4rem 1.8rem; max-width: 260px; transition: transform 0.3s, box-shadow 0.3s, background 0.3s; }
+  .tl-body:hover { transform: translateY(-4px); background: rgba(255,255,255,0.09); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+  .tl-year { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); margin-bottom: 0.4rem; }
+  .tl-item:nth-child(even) .tl-year { color: var(--lavender); }
+  .tl-item:nth-child(3n) .tl-year { color: var(--mint); }
+  .tl-title { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: white; margin-bottom: 0.4rem; }
+  .tl-desc { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+  /* EDUCATION */
   #education { padding: 6rem 3rem; background: var(--warm); }
   .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
   .edu-card { background: white; border-radius: 24px; padding: 2rem; border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
@@ -138,32 +98,66 @@
   .edu-degree { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
   .edu-college { font-size: 0.9rem; font-weight: 500; color: var(--purple); margin-bottom: 0.3rem; }
   .edu-detail { font-size: 0.85rem; color: #888; }
+
+  /* ABOUT */
   #about { padding: 6rem 3rem; background: var(--ink); color: white; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
   #about .section-label { color: var(--mint); }
   #about .section-title { color: white; }
   .about-desc { color: rgba(255,255,255,0.7); line-height: 1.8; font-weight: 300; }
   .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
   .stat { background: rgba(255,255,255,0.07); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1); }
-  .stat-num { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, var(--peach), var(--lavender)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-num { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, var(--peach), var(--lavender)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 0.3rem; }
   .about-image-wrap { position: relative; }
   .about-avatar { width: 100%; max-width: 380px; aspect-ratio: 1; border-radius: 30px; background: linear-gradient(135deg, var(--peach) 0%, var(--lavender) 50%, var(--mint) 100%); display: flex; align-items: center; justify-content: center; font-size: 8rem; position: relative; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
   .about-deco { position: absolute; width: 120px; height: 120px; background: var(--lemon); border-radius: 50%; top: -20px; right: -20px; z-index: 0; }
+
+  /* REVIEWS */
+  #reviews { padding: 6rem 3rem; background: var(--warm); }
+  .reviews-form { background: white; border-radius: 24px; padding: 2rem; margin-bottom: 2.5rem; border: 1px solid rgba(0,0,0,0.06); max-width: 600px; }
+  .reviews-form input, .reviews-form textarea { width: 100%; padding: 0.8rem 1rem; border: 1.5px solid rgba(0,0,0,0.1); border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; margin-bottom: 0.8rem; outline: none; transition: border 0.2s; background: var(--warm); }
+  .reviews-form input:focus, .reviews-form textarea:focus { border-color: var(--coral); }
+  .star-row { display: flex; gap: 8px; margin-bottom: 1rem; cursor: pointer; }
+  .star-row span { font-size: 1.8rem; transition: transform 0.2s; color: #ccc; }
+  .star-row span:hover { transform: scale(1.2); }
+  .submit-btn { background: var(--ink); color: white; border: none; padding: 0.8rem 2rem; border-radius: 50px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+  .review-card { background: white; border-radius: 20px; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+  .review-card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+  .review-stars { color: #F0B429; font-size: 1rem; margin-bottom: 0.6rem; }
+  .review-text { font-size: 0.88rem; color: #555; line-height: 1.7; font-style: italic; margin-bottom: 1rem; }
+  .review-name { font-weight: 700; font-size: 0.88rem; }
+  .review-role { font-size: 0.75rem; color: #aaa; }
+  .review-date { font-size: 0.72rem; color: #ccc; margin-top: 0.3rem; }
+  .msg-box { font-size: 0.85rem; margin-top: 0.5rem; display: none; }
+  .no-reviews { color: #aaa; font-size: 0.9rem; }
+
+  /* CONTACT */
   #contact { padding: 6rem 3rem; background: white; text-align: center; }
-  .contact-card { max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, var(--peach) 0%, var(--lavender) 100%); border-radius: 32px; padding: 4rem 3rem; }
+  .contact-card { max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, var(--peach) 0%, var(--lavender) 100%); border-radius: 32px; padding: 4rem 3rem; text-align: center; }
   .contact-card h2 { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 1rem; }
   .contact-card p { color: rgba(0,0,0,0.6); margin-bottom: 2rem; }
   .social-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
   .social-link { width: 48px; height: 48px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
   .social-link:hover { transform: scale(1.2) rotate(-5deg); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+  /* FOOTER */
   footer { padding: 2rem 3rem; text-align: center; font-size: 0.85rem; color: #999; background: var(--warm); border-top: 1px solid rgba(0,0,0,0.06); }
+
+  /* REVEAL */
   .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
-    #hero, #skills, #education, #contact { padding: 5rem 1.5rem 3rem; }
+    .nav-links { gap: 1rem; }
+    #hero, #skills, #education, #timeline, #reviews, #contact { padding: 5rem 1.5rem 3rem; }
     #about { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
     .about-avatar { max-width: 100%; }
+    .tl::before { left: 20px; }
+    .tl-item, .tl-item:nth-child(even) { justify-content: flex-start; padding-left: 4rem; padding-right: 0; }
+    .tl-dot { left: 20px; }
   }
 </style>
 </head>
@@ -171,10 +165,17 @@
 
 <div class="cursor" id="cursor"></div>
 
+<!-- VISITOR BAR -->
+<div class="visitor-bar">
+  👀 Total Visitors: <span id="vcount">0</span>
+</div>
+
+<!-- NAV -->
 <nav>
   <div class="logo">SV.</div>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#timeline">Timeline</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#reviews">Reviews</a></li>
@@ -182,6 +183,7 @@
   </ul>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
@@ -202,6 +204,7 @@
   </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
   <p class="section-label reveal">What I know</p>
   <h2 class="section-title reveal">Skills & Interests</h2>
@@ -216,12 +219,11 @@
   </div>
 </section>
 
-<section id="education">
- <section id="timeline">
+<!-- TIMELINE -->
+<section id="timeline">
   <p class="section-label reveal">My Story</p>
   <h2 class="section-title reveal">Journey Timeline</h2>
   <div class="tl">
-
     <div class="tl-item reveal">
       <div class="tl-dot">🏫</div>
       <div class="tl-body">
@@ -230,7 +232,6 @@
         <div class="tl-desc">JNVU Jodhpur · Physics, Chemistry & Maths</div>
       </div>
     </div>
-
     <div class="tl-item reveal">
       <div class="tl-dot">⚛️</div>
       <div class="tl-body">
@@ -239,7 +240,6 @@
         <div class="tl-desc">JNVU Jodhpur · Currently Pursuing 🔬</div>
       </div>
     </div>
-
     <div class="tl-item reveal">
       <div class="tl-dot">🤖</div>
       <div class="tl-body">
@@ -248,7 +248,6 @@
         <div class="tl-desc">BITS Pilani Digital · Currently Pursuing 🚀</div>
       </div>
     </div>
-
     <div class="tl-item reveal">
       <div class="tl-dot">🌟</div>
       <div class="tl-body">
@@ -257,9 +256,11 @@
         <div class="tl-desc">Physics + AI = Infinite Possibilities ✨</div>
       </div>
     </div>
-
   </div>
 </section>
+
+<!-- EDUCATION -->
+<section id="education">
   <p class="section-label reveal">My journey</p>
   <h2 class="section-title reveal">Education</h2>
   <div class="edu-grid">
@@ -284,47 +285,36 @@
   </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
   <div>
     <p class="section-label reveal">Who I am</p>
     <h2 class="section-title reveal">About Me</h2>
     <p class="about-desc reveal">
-      Main Shubhra Verma hun — Jodhpur, Rajasthan se. Maine BSc.BEd PCM ki hai aur ab BITS Pilani se  AI & Data Science mein or JNVU,Jodhpur se Physics me MSc kar rahi hun.<br><br>
+      Main Shubhra Verma hun — Jodhpur, Rajasthan se. Maine BSc.BEd PCM ki hai aur ab BITS Pilani se AI & Data Science mein aur JNVU Jodhpur se Physics mein MSc kar rahi hun.<br><br>
       Mujhe science, technology aur nayi cheezein seekhne ka bahut shauk hai. Physics ki duniya aur AI ka combination mujhe bahut exciting lagta hai! 🌟
     </p>
     <div class="stats reveal">
-      <div class="stat">
-        <div class="stat-num">2</div>
-        <div class="stat-label">MSc Programs</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">PCM</div>
-        <div class="stat-label">BSc.BEd Done ✅</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">JDH</div>
-        <div class="stat-label">Jodhpur, Rajasthan</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Curiosity 🔬</div>
-      </div>
+      <div class="stat"><div class="stat-num">2</div><div class="stat-label">MSc Programs</div></div>
+      <div class="stat"><div class="stat-num">PCM</div><div class="stat-label">BSc.BEd Done ✅</div></div>
+      <div class="stat"><div class="stat-num">JDH</div><div class="stat-label">Jodhpur, Rajasthan</div></div>
+      <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Curiosity 🔬</div></div>
     </div>
   </div>
   <div class="about-image-wrap reveal">
     <div class="about-deco"></div>
     <div class="about-avatar">
-  <img src="photo.jpg" alt="Shubhra Verma" 
-  style="width:100%; height:100%; object-fit:cover; border-radius:30px;">
-</div>
+      <img src="photo.jpg" alt="Shubhra Verma" style="width:100%; height:100%; object-fit:cover; border-radius:30px;">
+    </div>
   </div>
 </section>
+
+<!-- REVIEWS -->
 <section id="reviews">
   <p class="section-label reveal">Kind Words</p>
   <h2 class="section-title reveal">Reviews 🌸</h2>
-
   <div class="reviews-form reveal">
-    <input id="r-name" type="text" placeholder="Your name..." />
+    <input id="r-name" type="text" placeholder="Tumhara naam..." />
     <input id="r-role" type="text" placeholder="Role (e.g. Classmate, Teacher...)" />
     <div class="star-row" id="star-row">
       <span data-v="1">☆</span>
@@ -333,31 +323,33 @@
       <span data-v="4">☆</span>
       <span data-v="5">☆</span>
     </div>
-    <textarea id="r-text" rows="3" placeholder="Write your review..."></textarea>
+    <textarea id="r-text" rows="3" placeholder="Apna review likho..."></textarea>
     <button class="submit-btn" onclick="submitReview()">Submit Review 🌸</button>
     <p class="msg-box" id="r-msg"></p>
   </div>
-
   <div class="reviews-grid" id="reviews-list">
     <p class="no-reviews">Abhi tak koi review nahi — pehle review do! 🌸</p>
   </div>
 </section>
-</section>
-  <div class="contact-card reveal" style="text-align:center; margin: 0 auto;">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-card reveal">
     <h2>Let's connect! 🌸</h2>
-    <p>If intrested in chitchats 🤭— main yahan hun!</p>
+    <p>If interested in chitchats 🤭 — main yahan hun!</p>
     <a href="mailto:Shubhrav7@gmail.com" class="btn btn-primary">✉️ Shubhrav7@gmail.com</a>
     <div class="social-links">
-     <a class="social-link" href="https://instagram.com/verma.shubhra248" target="_blank" title="Instagram">📸</a>
+      <a class="social-link" href="https://instagram.com/verma.shubhra248" target="_blank" title="Instagram">📸</a>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2026 Shubhra Verma · Jodhpur, Rajasthan 🌸 
+  © 2026 Shubhra Verma · Jodhpur, Rajasthan 🌸
 </footer>
 
 <script>
+  // CURSOR
   const cursor = document.getElementById('cursor');
   document.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX - 7 + 'px';
@@ -365,141 +357,134 @@
   });
   document.querySelectorAll('a, button, .skill-card, .edu-card').forEach(el => {
     el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2.5)'; cursor.style.background = '#7C5CBF'; });
-    el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)';   cursor.style.background = '#FF6B6B'; });
+    el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; cursor.style.background = '#FF6B6B'; });
   });
+
+  // SCROLL REVEAL
   const observer = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // VISITOR COUNTER
+  let v = parseInt(localStorage.getItem('sv_visits') || '0') + 1;
+  localStorage.setItem('sv_visits', v);
+  document.getElementById('vcount').textContent = v;
+
+  // SUPABASE REVIEWS
+  const SUPABASE_URL = 'https://jmnlvkxxkvznpnadlpau.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imptbmx2a3h4a3Z6bnBuYWRscGF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzNjU4NzgsImV4cCI6MjA5NTk0MTg3OH0.ytqyS1pxvrWG_IYah1E8YcIKn0BJGq_9VMZZbbm4xLk';
+
   let selectedStars = 0;
 
-document.querySelectorAll('#star-row span').forEach(star => {
-  star.addEventListener('mouseover', () => {
-    document.querySelectorAll('#star-row span').forEach((s, i) => {
-      s.textContent = i < +star.dataset.v ? '★' : '☆';
-      s.style.color = i < +star.dataset.v ? '#F0B429' : '#ccc';
+  document.querySelectorAll('#star-row span').forEach(star => {
+    star.addEventListener('mouseover', () => {
+      document.querySelectorAll('#star-row span').forEach((s, i) => {
+        s.textContent = i < +star.dataset.v ? '★' : '☆';
+        s.style.color = i < +star.dataset.v ? '#F0B429' : '#ccc';
+      });
+    });
+    star.addEventListener('mouseout', () => {
+      document.querySelectorAll('#star-row span').forEach((s, i) => {
+        s.textContent = i < selectedStars ? '★' : '☆';
+        s.style.color = i < selectedStars ? '#F0B429' : '#ccc';
+      });
+    });
+    star.addEventListener('click', () => {
+      selectedStars = +star.dataset.v;
     });
   });
-  star.addEventListener('mouseout', () => {
-    document.querySelectorAll('#star-row span').forEach((s, i) => {
-      s.textContent = i < selectedStars ? '★' : '☆';
-      s.style.color = i < selectedStars ? '#F0B429' : '#ccc';
-    });
-  });
-  star.addEventListener('click', () => {
-    selectedStars = +star.dataset.v;
-  });
-});
 
-const SUPABASE_URL = 'https://jmnlvkxxkvznpnadlpau.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imptbmx2a3h4a3Z6bnBuYWRscGF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzNjU4NzgsImV4cCI6MjA5NTk0MTg3OH0.ytqyS1pxvrWG_IYah1E8YcIKn0BJGq_9VMZZbbm4xLk';
+  async function loadReviews() {
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/reviews?order=id.desc`, {
+        headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+      });
+      const reviews = await res.json();
+      renderReviews(Array.isArray(reviews) ? reviews : []);
+    } catch(e) { renderReviews([]); }
+  }
 
-let selectedStars = 0;
-
-document.querySelectorAll('#star-row span').forEach(star => {
-  star.addEventListener('mouseover', () => {
-    document.querySelectorAll('#star-row span').forEach((s, i) => {
-      s.textContent = i < +star.dataset.v ? '★' : '☆';
-      s.style.color = i < +star.dataset.v ? '#F0B429' : '#ccc';
-    });
-  });
-  star.addEventListener('mouseout', () => {
-    document.querySelectorAll('#star-row span').forEach((s, i) => {
-      s.textContent = i < selectedStars ? '★' : '☆';
-      s.style.color = i < selectedStars ? '#F0B429' : '#ccc';
-    });
-  });
-  star.addEventListener('click', () => {
-    selectedStars = +star.dataset.v;
-  });
-});
-
-async function loadReviews() {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/reviews?order=id.desc`, {
-    headers: {
-      'apikey': SUPABASE_KEY,
-      'Authorization': `Bearer ${SUPABASE_KEY}`
+  function renderReviews(reviews) {
+    const list = document.getElementById('reviews-list');
+    if (!reviews.length) {
+      list.innerHTML = '<p class="no-reviews">Abhi tak koi review nahi — pehle review do! 🌸</p>';
+      return;
     }
-  });
-  const reviews = await res.json();
-  renderReviews(reviews);
-}
-
-function renderReviews(reviews) {
-  const list = document.getElementById('reviews-list');
-  if (!reviews.length) {
-    list.innerHTML = '<p class="no-reviews">Abhi tak koi review nahi — pehle review do! 🌸</p>';
-    return;
-  }
-  list.innerHTML = reviews.map(r => `
-    <div class="review-card">
-      <div class="review-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
-      <p class="review-text">"${r.text}"</p>
-      <div class="review-name">${r.name}</div>
-      <div class="review-role">${r.role}</div>
-      <div class="review-date">${r.date}</div>
-    </div>
-  `).join('');
-}
-
-async function submitReview() {
-  const name = document.getElementById('r-name').value.trim();
-  const role = document.getElementById('r-role').value.trim();
-  const text = document.getElementById('r-text').value.trim();
-  const msg = document.getElementById('r-msg');
-
-  if (!name || !text || !selectedStars) {
-    msg.style.display = 'block';
-    msg.style.color = 'red';
-    msg.textContent = 'Naam, review aur rating sab bharo!';
-    return;
+    list.innerHTML = reviews.map(r => `
+      <div class="review-card">
+        <div class="review-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
+        <p class="review-text">"${r.text}"</p>
+        <div class="review-name">${r.name}</div>
+        <div class="review-role">${r.role}</div>
+        <div class="review-date">${r.date}</div>
+      </div>
+    `).join('');
   }
 
-  const btn = document.querySelector('.submit-btn');
-  btn.textContent = 'Save ho raha hai...';
-  btn.disabled = true;
+  async function submitReview() {
+    const name = document.getElementById('r-name').value.trim();
+    const role = document.getElementById('r-role').value.trim();
+    const text = document.getElementById('r-text').value.trim();
+    const msg = document.getElementById('r-msg');
 
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/reviews`, {
-    method: 'POST',
-    headers: {
-      'apikey': SUPABASE_KEY,
-      'Authorization': `Bearer ${SUPABASE_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      name,
-      role: role || 'Visitor',
-      stars: selectedStars,
-      text,
-      date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
-    })
-  });
+    if (!name || !text || !selectedStars) {
+      msg.style.display = 'block';
+      msg.style.color = 'red';
+      msg.textContent = 'Naam, review aur rating sab bharo!';
+      return;
+    }
 
-  if (res.ok) {
-    document.getElementById('r-name').value = '';
-    document.getElementById('r-role').value = '';
-    document.getElementById('r-text').value = '';
-    selectedStars = 0;
-    document.querySelectorAll('#star-row span').forEach(s => {
-      s.textContent = '☆'; s.style.color = '#ccc';
-    });
-    msg.style.display = 'block';
-    msg.style.color = 'green';
-    msg.textContent = 'Review submit ho gaya! Shukriya 🌸';
-    loadReviews();
-  } else {
-    msg.style.display = 'block';
-    msg.style.color = 'red';
-    msg.textContent = 'Kuch error aaya — dobara try karo!';
+    const btn = document.querySelector('.submit-btn');
+    btn.textContent = 'Save ho raha hai...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/reviews`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': `Bearer ${SUPABASE_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          name,
+          role: role || 'Visitor',
+          stars: selectedStars,
+          text,
+          date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
+        })
+      });
+
+      if (res.ok) {
+        document.getElementById('r-name').value = '';
+        document.getElementById('r-role').value = '';
+        document.getElementById('r-text').value = '';
+        selectedStars = 0;
+        document.querySelectorAll('#star-row span').forEach(s => { s.textContent = '☆'; s.style.color = '#ccc'; });
+        msg.style.display = 'block';
+        msg.style.color = 'green';
+        msg.textContent = 'Review submit ho gaya! Shukriya 🌸';
+        loadReviews();
+      } else {
+        msg.style.display = 'block';
+        msg.style.color = 'red';
+        msg.textContent = 'Kuch error aaya — dobara try karo!';
+      }
+    } catch(e) {
+      msg.style.display = 'block';
+      msg.style.color = 'red';
+      msg.textContent = 'Network error — dobara try karo!';
+    }
+
+    btn.textContent = 'Submit Review 🌸';
+    btn.disabled = false;
   }
 
-  btn.textContent = 'Submit Review 🌸';
-  btn.disabled = false;
-}
-
-loadReviews();
+  loadReviews();
 </script>
 </body>
 </html>
