@@ -419,16 +419,18 @@
       }
     );
 
+    console.log("Status:", res.status);
+
     const reviews = await res.json();
     console.log("Reviews:", reviews);
 
     renderReviews(reviews);
 
   } catch (e) {
-    console.error(e);
+    console.error("Error:", e);
   }
- }
-
+ } 
+ 
   document.querySelectorAll('#star-row span').forEach(star => {
     star.addEventListener('mouseover', () => {
       document.querySelectorAll('#star-row span').forEach((s, i) => {
