@@ -410,7 +410,7 @@
  async function loadReviews() {
   try {
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/reviews?select=*`,
+      `${SUPABASE_URL}/rest/v1/reviews1?select=*`,
       {
         headers: {
           apikey: SUPABASE_KEY,
@@ -424,7 +424,7 @@
     const reviews = await res.json();
     console.log("Reviews:", reviews);
 
-    renderReviews(reviews);
+    renderReviews(reviews1);
 
   } catch (e) {
     console.error("Error:", e);
