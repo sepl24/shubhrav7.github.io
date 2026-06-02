@@ -6,6 +6,35 @@
 <title>Shubhra Verma — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+/* VISITOR COUNTER */
+.visitor-bar { background: var(--ink); color: white; text-align: center; padding: 0.8rem; font-size: 0.85rem; }
+.visitor-bar span { color: var(--peach); font-weight: 700; }
+
+/* TIMELINE */
+#timeline { padding: 6rem 3rem; background: var(--ink); }
+#timeline .section-label { color: var(--mint); }
+#timeline .section-title { color: white; }
+.tl { position: relative; max-width: 700px; margin: 3rem auto 0; }
+.tl::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--coral), var(--purple), var(--teal)); box-shadow: 0 0 12px var(--purple); }
+.tl-item { display: flex; justify-content: flex-end; padding-right: calc(50% + 2.5rem); margin-bottom: 3rem; position: relative; }
+.tl-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: calc(50% + 2.5rem); }
+.tl-dot { position: absolute; left: 50%; transform: translateX(-50%); width: 48px; height: 48px; border-radius: 50%; background: var(--ink); border: 2px solid var(--coral); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; box-shadow: 0 0 16px var(--coral), 0 0 32px rgba(255,107,107,0.3); z-index: 2; transition: box-shadow 0.3s; }
+.tl-item:nth-child(even) .tl-dot { border-color: var(--purple); box-shadow: 0 0 16px var(--purple), 0 0 32px rgba(124,92,191,0.3); }
+.tl-item:nth-child(3n) .tl-dot { border-color: var(--teal); box-shadow: 0 0 16px var(--teal), 0 0 32px rgba(42,191,191,0.3); }
+.tl-dot:hover { box-shadow: 0 0 24px var(--coral), 0 0 50px rgba(255,107,107,0.5); transform: translateX(-50%) scale(1.15); }
+.tl-body { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 1.4rem 1.8rem; max-width: 260px; transition: transform 0.3s, box-shadow 0.3s, background 0.3s; }
+.tl-body:hover { transform: translateY(-4px); background: rgba(255,255,255,0.09); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+.tl-year { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); margin-bottom: 0.4rem; }
+.tl-item:nth-child(even) .tl-year { color: var(--lavender); }
+.tl-item:nth-child(3n) .tl-year { color: var(--mint); }
+.tl-title { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: white; margin-bottom: 0.4rem; }
+.tl-desc { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+@media (max-width: 768px) {
+  .tl::before { left: 20px; }
+  .tl-item, .tl-item:nth-child(even) { justify-content: flex-start; padding-left: 4rem; padding-right: 0; }
+  .tl-dot { left: 20px; }
+}
+<style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --peach: #FFD6C0; --mint: #C2F0DC; --lavender: #DDD6FF;
