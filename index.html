@@ -34,6 +34,13 @@
   .tl-item, .tl-item:nth-child(even) { justify-content: flex-start; padding-left: 4rem; padding-right: 0; }
   .tl-dot { left: 20px; }
 }
+  #reviews { padding: 6rem 3rem; background: var(--warm); }
+.reviews-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap:1.5rem; margin-top:2rem; }
+.review-card { background:white; border-radius:20px; padding:1.8rem; border:1px solid rgba(0,0,0,0.05); }
+.review-stars { color:#FFB800; font-size:1rem; margin-bottom:0.8rem; }
+.review-text { font-size:0.9rem; color:#555; line-height:1.7; font-style:italic; margin-bottom:1rem; }
+.review-name { font-weight:700; font-size:0.88rem; }
+.review-role { font-size:0.78rem; color:#999; }
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
