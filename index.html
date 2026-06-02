@@ -521,9 +521,9 @@
         msg.textContent = 'Review submit ho gaya! Shukriya 🌸';
         loadReviews();
       } else {
-        msg.style.display = 'block';
-        msg.style.color = 'red';
-        msg.textContent = 'Kuch error aaya — dobara try karo!';
+  const err = await res.text();
+  console.log(err);
+  alert(err);
       }
     } catch(e) {
       msg.style.display = 'block';
